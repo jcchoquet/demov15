@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_attribute_view_form" model="ir.ui.view">
+        <field name="name">product.attribute.thumbnail.form</field>
+        <field name="model">product.attribute</field>
+        <field name="inherit_id" ref="product.product_attribute_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook/page[@name='attribute_values']/field[@name='value_ids']/tree" position="inside">
+                <field name="image_1920" widget="image" class="oe_edit_only"
+                       attrs="{'column_invisible': [('parent.display_type', '!=', 'thumbnail')]}"/>
+                <field name="image_128" widget="image" class="oe_read_only" string="Image"
+                       attrs="{'column_invisible': [('parent.display_type', '!=', 'thumbnail')]}"/>
+                <field name="legend" attrs="{'column_invisible': [('parent.display_type', '!=', 'thumbnail')]}"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
