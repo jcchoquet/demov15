@@ -48,7 +48,7 @@
         </xpath>
     </template>
 
-    <template id="carousel_product_public_user_bloc" inherit_id="website_sale.shop_product_carousel">
+    <!--<template id="carousel_product_public_user_bloc" inherit_id="website_sale.shop_product_carousel">
         <xpath expr="//div[@id='o-carousel-product']//div[hasclass('carousel-inner')]/t" position="after">
 
             <div class="p-4 w-100 connect-for-prices-bloc">
@@ -82,6 +82,6 @@
         <xpath expr="//div[hasclass('css_quantity')]" position="attributes">
             <attribute name="t-if">env['ir.ui.view'].user_has_groups('base.group_user')</attribute>
         </xpath>
-    </template>
+    </template>-->
 
 </odoo>
