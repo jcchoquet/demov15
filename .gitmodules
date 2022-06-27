@@ -1,0 +1,4 @@
+[submodule "Yenthe666/website"]
+	path = Yenthe666/website
+	url = git@github.com:Yenthe666/website.git
+	branch = 15.0
