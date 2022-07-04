@@ -50,7 +50,7 @@
     
     <template id="kd_badge_extra_price" inherit_id="sale.badge_extra_price">
         <xpath expr="//span[hasclass('badge','badge-pill','badge-light','border')]" position="replace">
-            <span class="badge badge-pill badge-light border" t-if="combination_info_variant['price_extra'] < 9999">
+            <span class="badge badge-pill badge-light border" t-if="1 = 2">
         <!--
             price_extra is displayed as catalog price instead of
             price after pricelist because it is impossible to
