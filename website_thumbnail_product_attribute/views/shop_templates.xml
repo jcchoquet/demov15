@@ -33,7 +33,7 @@
                                    t-att-data-is_single="single"
                                    t-att-data-is_single_and_custom="single_and_custom"/>
                             <div class="image-wrapper">
-                              <img t-attf-src="#{env['website'].image_url(ptav.product_attribute_value_id, 'image_1024')}"/>
+                              <img t-attf-src="#{env['website'].image_url(ptav.product_attribute_value_id, 'image_256')}"/>
                             </div>
                             <div class="border-top px-2">
                                 <div class="thumbnail-details mb-3 mt-2">
@@ -82,6 +82,13 @@
         <xpath expr="//div[hasclass('css_quantity')]" position="attributes">
             <attribute name="t-if">env['ir.ui.view'].user_has_groups('base.group_user')</attribute>
         </xpath>
-    </template>-->
+    </template>
+
+    <template id="products_add_to_cart_connected_user_only" inherit_id="website_sale.products_add_to_cart">
+        <xpath expr="//t[@t-if='product_variant_id']" position="attributes">
+            <attribute name="t-if">product_variant_id and env['ir.ui.view'].user_has_groups('base.group_user')</attribute>
+        </xpath>
+    </template>
+-->
 
 </odoo>
