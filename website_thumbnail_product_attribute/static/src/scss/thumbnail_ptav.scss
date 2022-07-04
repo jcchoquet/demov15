@@ -16,7 +16,7 @@ $custom_green : #18A558;
 .thumbnail-item {
     cursor: pointer;
     border-radius: 8px;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     position: relative;
     padding: 0;
     overflow: hidden;
@@ -31,7 +31,7 @@ $custom_green : #18A558;
 
     .image-wrapper {
         width: 100%;
-        height: 130px;
+        // height: 130px;
     }
     .image-wrapper img {
         object-fit: scale-down;
