@@ -48,9 +48,25 @@
         </xpath>
     </template>
     
-    <template id="kd_variants" inherit_id="website_sale.product_variants">
-        <xpath expr="//t[@t-set='diff_price']" position="replace">
-            <t t-set="diff_price" t-value="0"/>
+    <template id="kd_badge_extra_price" inherit_id="sale.badge_extra_price">
+        <xpath expr="//span[hasclass('badge','badge-pill','badge-light','border')]" position="replace">
+            <span class="badge badge-pill badge-light border" t-if="combination_info_variant['price_extra'] < 9999">
+        <!--
+            price_extra is displayed as catalog price instead of
+            price after pricelist because it is impossible to
+            compute. Indeed, the pricelist rule might depend on the
+            selected variant, so the price_extra will be different
+            depending on the selected combination. The price of an
+            attribute is therefore variable and it's not very
+            accurate to display it.
+
+            To cover some generic cases, the price_extra also
+            covers the price-included taxes in e-commerce flows.
+            (See the override of `_get_combination_info`)
+        -->
+        <span class="sign_badge_price_extra" t-esc="combination_info_variant['price_extra'] &gt; 0 and '+' or '-'"/>
+        <span t-esc="abs(combination_info_variant['price_extra'])" class="variant_price_extra text-muted font-italic" style="white-space: nowrap;" t-options="{                 &quot;widget&quot;: &quot;monetary&quot;,                 &quot;display_currency&quot;: (pricelist or product).currency_id             }"/>
+        </span>
         </xpath>
     </template>
 
