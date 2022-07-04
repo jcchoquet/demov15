@@ -47,6 +47,12 @@
             </t>
         </xpath>
     </template>
+    
+    <template id="kd_variants" inherit_id="website_sale.product_variants">
+        <xpath expr="//t[@t-set='diff_price']" position="replace">
+            <t t-set="diff_price" t-value="0"/>
+        </xpath>
+    </template>
 
     <!--<template id="carousel_product_public_user_bloc" inherit_id="website_sale.shop_product_carousel">
         <xpath expr="//div[@id='o-carousel-product']//div[hasclass('carousel-inner')]/t" position="after">
