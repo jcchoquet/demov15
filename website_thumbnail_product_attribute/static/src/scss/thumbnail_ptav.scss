@@ -34,7 +34,7 @@ $custom_green : #18A558;
         height: 130px;
     }
     .image-wrapper img {
-        object-fit: fill;
+        object-fit: scale-down;
         min-width: 100%;
         min-height: 100%;
         width: auto;
